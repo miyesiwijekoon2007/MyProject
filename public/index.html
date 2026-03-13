@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#1e1e4f,#4b4bd4);
+}
+
+.container{
+    background: linear-gradient(135deg,#2c2c6c,#6b6be8);
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+    width:350px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+h1{
+    color:white;
+}
+
+p{
+    color:#dcdcff;
+}
+
+input{
+    width:90%;
+    padding:10px;
+    margin-top:15px;
+    border:none;
+    border-radius:8px;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    background:#7a7aff;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#5c5cff;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Welcome</h1>
+<p>Please enter your name to receive a greeting</p>
+
+<form action="/submit" method="POST">
+<input type="text" name="username" placeholder="Enter your name" required>
+<br>
+<button type="submit">Get Greeting</button>
+</form>
+
+</div>
+
+</body>
+</html>

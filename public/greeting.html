@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Greeting</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: Arial;
+    background: linear-gradient(135deg,#1e1e4f,#4b4bd4);
+}
+
+.box{
+    background: linear-gradient(135deg,#2c2c6c,#6b6be8);
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+    color:white;
+    width:350px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+a{
+    color:#dcdcff;
+    text-decoration:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1 id="message"></h1>
+
+<br>
+
+<a href="/">Go Back</a>
+
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const name = params.get("name");
+document.getElementById("message").innerText = "Hello, " + name + "!";
+</script>
+
+</body>
+</html>

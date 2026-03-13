@@ -1,16 +1,22 @@
-//port config
-const port =3001;
-//express config
-const exp=require("express");
-//conflig server app
-const app =exp();
-const name = "Chamudini Thathsarani";
-const batch = "Batch 2024";
+const express = require("express");
+const app = express();
+const port = 3001;
 
-app.listen(port, () => {
-    console.log(`Server started at Port: ${port}`);
-    console.log(`Name: ${name}`);
-    console.log(`Batch: ${batch}`);
-    console.log("Press Ctrl + C to stop the server");
+// to read POST form data
+app.use(express.urlencoded({ extended: true }));
+
+// serve HTML files
+app.use(express.static("public"));
+
+// POST request to get the user's name
+app.post("/submit", (req, res) => {
+    const username = req.body.username; // store name in variable
+
+    // redirect using GET request
+    res.redirect("/greeting.html?name=" + username);
 });
-// app.listen(port);
+
+// start server
+app.listen(port, () => {
+    console.log(`Server running on http://localhost:${port}`);
+});
